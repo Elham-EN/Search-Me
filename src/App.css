@@ -7,6 +7,12 @@
   pointer-events: none;
 }
 
+h1 {
+  font-family: "Gamja Flower", cursive;
+  font-size: 3rem;
+  color: lightgreen;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
