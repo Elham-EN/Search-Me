@@ -23,8 +23,10 @@ class App extends Component {
   }
 
   //arrow func bind this to the context it was defined
-  handleChange = (event) => {
-    this.setState({ searchField: event.target.value });
+  onSearchChange = (event) => {
+    this.setState({
+      searchField: event.target.value,
+    });
   };
 
   //method that actually outputs the HTML to the DOM
@@ -33,13 +35,13 @@ class App extends Component {
     const filteredMonsters = monsters.filter((monster) => {
       return monster.name.toLowerCase().includes(searchField.toLowerCase());
     });
-    console.log("Filtered: ", filteredMonsters);
+
     return (
       <div className="App">
         <h1>kittens</h1>
         <SearchBox
           placeholder="search kitten"
-          handleChange={this.handleChange}
+          handleChange={this.onSearchChange}
         />
         <CardList monsters={filteredMonsters} />
       </div>
